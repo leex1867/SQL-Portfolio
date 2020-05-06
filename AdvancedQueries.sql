@@ -26,6 +26,11 @@ FROM claims;
 
 2B
 
+SELECT
+	*,
+    COUNT(*) OVER (PARTITION BY hcc_cd) AS hcc_diag_count
+FROM diaginfo;		   
+		   
 2C
 
 Create a "sequence" column to show the month sequence per member ID, or the total number of months that a member has
